@@ -1,0 +1,64 @@
+.class{
+   border: 1px solid rgba(83, 79, 79, 0.508);
+   padding: 20px 30px;
+   border-radius: 10px;
+   background: orchid;
+   margin-bottom: 10px;
+}
+.class input{
+    padding: 7px 9px;
+
+}
+.checkbox_1{
+ /* border: 1px solid red; */
+    padding: 6px 10px;
+}
+.Parent_design{
+    /* border: 1px solid black; */
+    padding: 10px 15px;
+}
+.child_1,.child_2{
+    display: flex;
+    margin-bottom: 20px;
+  /* //  border: 1px solid red; */
+}
+.child_1 label{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 80px;
+    /* margin-bottom:15px; */
+}
+.child_2 label{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+.date_picker_input{
+    color: red;
+    background: orange;
+}
+.image_child_1{
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+.image_child_1 label{
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+    color:white;
+}
+.image_child_1 button{
+    padding: 10px 9px;
+    text-align: center;
+    border-radius: 6px;
+    border:none;
+}
+.image_parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgba(53, 50, 50, 0.437); */
+    background: rgba(255, 0, 255, 0.717);
+    border-radius: 10px;
+}
