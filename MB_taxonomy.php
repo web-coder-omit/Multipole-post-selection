@@ -49,8 +49,11 @@ add_action('save_post', 'save_metabox');
 function select_metabox_function($post){
     // Retrieve saved value
     $selected_post_id = get_post_meta($post->ID, 'mp_p_selected_posts', true);
-    print_r($selected_post_id);
+     print_r($selected_post_id);
     
+    //  if (!is_array($selected_post_id)) {
+    //     $selected_post_id = array();
+    // }
     // Display nonce for security
     wp_nonce_field('mp_p_posts', 'mp_p_posts_nonce');
     
@@ -63,10 +66,30 @@ function select_metabox_function($post){
     
     // Build the dropdown list
     $dropdown_list = '';
+    $extra = '';
     foreach ($all_posts as $single_post) {
-        $extra = ($single_post->ID == $selected_post_id) ? 'selected' : '';
+        // $extra = ($single_post->ID == $selected_post_id) ? 'selected' : '';
+        if(in_array($single_post->ID,$selected_post_id)){
+            $extra = 'selected';
+        }
+        // if($single_post->ID == $selected_post_id){
+        //     $extra = 'selected';
+        // }
         $dropdown_list .= sprintf("<option %s value='%s'>%s</option>", $extra, $single_post->ID, $single_post->post_title);
     }
+    // $dropdown_list = '';
+    // foreach ($all_posts as $single_post) {
+    //     // Reset $extra for each iteration
+    //     $extra = ($selected_post_id == $single_post->ID) ? 'selected' : '';
+        
+    //     // Escape output for security
+    //     $dropdown_list .= sprintf(
+    //         "<option %s value='%s'>%s</option>", 
+    //         $extra, 
+    //         esc_attr($single_post->ID), 
+    //         esc_html($single_post->post_title)
+    //     );
+    // }
     
     // Display the dropdown and label
     echo <<<EOD
